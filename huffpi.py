@@ -1,7 +1,9 @@
 import os
 from time import *
 
-sleep(5)
-os.system("iceweasel -P 'kiosk' --no-remote http://www.micahhuff.com")
-sleep(5)
-os.system('xdotool key --clearmodifiers F11')
+def startIceweaselKiosk():
+   sleep(5)
+   os.system("iceweasel -P 'kiosk' --no-remote http://www.micahhuff.com")
+
+if __name__ == "__main__":
+   startIceweaselKiosk()
