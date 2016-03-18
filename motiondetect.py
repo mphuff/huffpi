@@ -4,11 +4,11 @@ import time
 import subprocess
 
 PIR_PIN = 4
-SHUTOFF_DELAY = 10
+SHUTOFF_DELAY = 30
 
 def monitorControlFromPIR():
    GPIO.setmode(GPIO.BCM)
-   GPIO.setup(PIR_PIN, GPIO.IN) # , GPIO.PUD_DOWN)
+   GPIO.setup(PIR_PIN, GPIO.IN)
 
    last_motion_time = time.time()
    turned_off = False
@@ -33,11 +33,6 @@ def turn_on():
 def turn_off():
    subprocess.call("sh /home/pi/huffpi/monitor_off.sh", shell=True)
 
-def startIceweaselKiosk():
-   time.sleep(5)
-   os.system("iceweasel -P 'kiosk' --no-remote http://www.micahhuff.com")
-
 if __name__ == "__main__":
    monitorControlFromPIR()
-   # startIceweaselKiosk()
    
