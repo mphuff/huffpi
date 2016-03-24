@@ -4,7 +4,7 @@ import time
 import subprocess
 
 PIR_PIN = 4
-SHUTOFF_DELAY = 30
+SHUTOFF_DELAY = 15 * 60 (15 min * 60 seconds)
 
 def monitorControlFromPIR():
    GPIO.setmode(GPIO.BCM)
