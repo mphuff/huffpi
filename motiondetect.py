@@ -10,11 +10,11 @@ def monitorControlFromPIR():
    GPIO.setmode(GPIO.BCM)
    GPIO.setup(PIR_PIN, GPIO.IN)
 
-   last_motion_time = time.time()
+   last_motion_time = None
    turned_off = False
 
    while True:
-      if GPIO.input(PIR_PIN):
+      if (last_motion_time is None) || (GPIO.input(PIR_PIN)):
          last_motion_time = time.time()
          if turned_off:
             turned_off = False
