@@ -14,7 +14,7 @@ def monitorControlFromPIR():
    turned_off = False
 
    while True:
-      if (last_motion_time is None) || (GPIO.input(PIR_PIN)):
+      if (last_motion_time is None) or (GPIO.input(PIR_PIN)):
          last_motion_time = time.time()
          if turned_off:
             turned_off = False
